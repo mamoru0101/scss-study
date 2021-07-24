@@ -19,6 +19,12 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 body {
   background: $primary-color;
   color: $text-color;
@@ -36,8 +42,12 @@ body {
       color: pink;
     }
   }
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .light {
-  @include theme($light-theme: true);
+  @include theme($light-theme: false);
 }
